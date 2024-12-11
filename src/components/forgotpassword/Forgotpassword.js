@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEmail, forgotPassword } from '../store/slices/forgotPasswordSlice';
 
 export default function Forgotpassword() {
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const dispatch = useDispatch();
+    const { email, loading, message, error } = useSelector((state) => state.forgotPassword);
+
 
      function handleSubmit(e) {
         e.preventDefault();
-        setLoading(true);
-        setError("");
-        setMessage("");
+        dispatch(forgotPassword(email)); 
      }
 
     return(
@@ -25,7 +24,7 @@ export default function Forgotpassword() {
                      id="email" 
                      value={email} 
                      placeholder="Enter email"
-                     onChange={(e) => setEmail(e.target.value)} 
+                     onChange={(e) => dispatch(setEmail(e.target.value))} 
                      required
                      />
                 </div>
@@ -35,6 +34,11 @@ export default function Forgotpassword() {
                     <button type="submit" disabled={loading} class="btn btn-primary">{loading ? 'Sending...' : 'Submit'}</button>
                 </div>
             </form>
+            <div className="login-redirect">
+                <p>
+                Remembered your password? <a href="/login">Login</a>
+                </p>
+            </div>
         </div>
     )
 }
