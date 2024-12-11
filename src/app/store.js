@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import forgotPasswordReducer from '../features/forgotPassword/forgotPasswordSlice';
 
 const store = configureStore({
     reducer: {
-        // Define your reducers here
+        forgotPassword: forgotPasswordReducer,
     }
 })
