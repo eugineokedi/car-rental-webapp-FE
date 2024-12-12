@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpStart, signUpSuccess, signUpFailure } from '../../features/authentication/authSlice';
+import { signUp } from '../../api/auth';
 
 export default function SignupForm() {
     const dispatch = useDispatch();
