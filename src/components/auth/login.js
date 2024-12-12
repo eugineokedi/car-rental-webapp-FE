@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { loginStart, loginSuccess, loginFailure } from '../../features/authentication/authSlice';
+import { logIn } from '../../api/authApi';
 
 
 export default function Login() {
