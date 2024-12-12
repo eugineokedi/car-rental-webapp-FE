@@ -6,5 +6,6 @@ const store = configureStore({
     reducer: {
         forgotPassword: forgotPasswordReducer,
         resetPassword: resetPasswordReducer, 
+        auth: authReducer,
     }
 })
