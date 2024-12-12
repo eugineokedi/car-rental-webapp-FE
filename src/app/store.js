@@ -5,6 +5,6 @@ import resetPasswordReducer from '../features/forgotPassword/resetPasswordSlice'
 const store = configureStore({
     reducer: {
         forgotPassword: forgotPasswordReducer,
-        resetPassword: resetPasswordReducer,
+        resetPassword: resetPasswordReducer, 
     }
 })
